@@ -1,0 +1,330 @@
+/* ==========================================
+   BLOG & NOTES TAB - DOODLE, SUBSTACK & MEDIUM
+   ========================================== */
+
+   .doodle-container {
+    padding: 1rem 0.5rem;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: var(--ink-black, #0d0c0a);
+    background: transparent !important;
+  }
+
+  /* Strict Global SVG Constraint */
+  svg.doodle-svg {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    display: inline-block;
+    vertical-align: middle;
+    stroke: currentColor;
+    flex-shrink: 0;
+  }
+
+  /* Header */
+  .doodle-header {
+    margin-bottom: 2rem;
+  }
+
+  .doodle-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: var(--bg-paper, #e8dcbf);
+    border: 2px solid var(--border-bold, #0d0c0a);
+    box-shadow: 2px 2px 0px var(--border-bold, #0d0c0a);
+    padding: 0.25rem 0.8rem;
+    font-family: 'Courier Prime', 'Nanum Gothic Coding', monospace;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--ink-black, #0d0c0a);
+    margin-bottom: 0.8rem;
+  }
+
+  .doodle-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0.2rem 0;
+    color: var(--ink-black, #0d0c0a);
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    color: var(--ink-muted, #3a362d);
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ------------------------------------------
+     PUBLICATIONS BANNER
+     ------------------------------------------ */
+  .substack-box {
+    position: relative;
+    background: var(--paper-white, #f5eedc);
+    border: 3px solid var(--border-bold, #0d0c0a);
+    box-shadow: 5px 5px 0px var(--border-bold, #0d0c0a);
+    padding: 1.8rem 1.6rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .tape-sticker {
+    position: absolute;
+    top: -10px;
+    right: 25px;
+    width: 90px;
+    height: 20px;
+    background: rgba(215, 202, 172, 0.85);
+    border: 1px dashed rgba(13, 12, 10, 0.4);
+    transform: rotate(2deg);
+    pointer-events: none;
+  }
+
+  .substack-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .typewriter-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: 'Courier Prime', 'Nanum Gothic Coding', monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--ink-black, #0d0c0a);
+  }
+
+  .platform-badges {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .platform-badge {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--ink-black, #0d0c0a);
+    background: var(--bg-paper, #e8dcbf);
+    border: 1.5px solid var(--border-bold, #0d0c0a);
+    padding: 0.15rem 0.5rem;
+  }
+
+  .substack-content h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0 0 0.4rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--ink-black, #0d0c0a);
+  }
+
+  .substack-content p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--ink-muted, #3a362d);
+    margin: 0 0 1.2rem 0;
+  }
+
+  .subscribe-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  /* ------------------------------------------
+     POSTS GRID
+     ------------------------------------------ */
+  .posts-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--ink-black, #0d0c0a);
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .doodle-card {
+    position: relative;
+    background: var(--paper-white, #f5eedc);
+    border: 2.5px solid var(--border-bold, #0d0c0a);
+    box-shadow: 4px 4px 0px var(--border-bold, #0d0c0a);
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+  }
+
+  .doodle-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 6px 6px 0px var(--border-bold, #0d0c0a);
+  }
+
+  .card-pin {
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    background: var(--paper-white, #f5eedc);
+    border: 1.5px solid var(--border-bold, #0d0c0a);
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .post-meta {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .post-date {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    color: var(--ink-black, #0d0c0a);
+    font-size: 0.75rem;
+    background: var(--bg-paper, #e8dcbf);
+    padding: 0.1rem 0.4rem;
+    border: 1px solid var(--border-bold, #0d0c0a);
+  }
+
+  .platform-tag {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    color: var(--ink-muted, #3a362d);
+    font-size: 0.72rem;
+    border: 1px dashed var(--border-bold, #0d0c0a);
+    padding: 0.1rem 0.4rem;
+  }
+
+  .project-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--ink-black, #0d0c0a);
+    line-height: 1.35;
+  }
+
+  .project-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--ink-muted, #3a362d);
+    margin-bottom: 1rem;
+  }
+
+  .blog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .b-tag {
+    background: var(--paper-white, #f5eedc);
+    border: 1.5px solid var(--border-bold, #0d0c0a);
+    padding: 0.15rem 0.5rem;
+    font-size: 0.75rem;
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    color: var(--ink-black, #0d0c0a);
+  }
+
+  /* ------------------------------------------
+     BUTTONS & CTA
+     ------------------------------------------ */
+  .card-footer {
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  .doodle-btn {
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 0.4rem 0.8rem;
+    border: 2px solid var(--border-bold, #0d0c0a);
+    box-shadow: 2px 2px 0px var(--border-bold, #0d0c0a);
+    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    color: var(--ink-black, #0d0c0a);
+    background: var(--paper-white, #f5eedc);
+  }
+
+  .doodle-btn.primary {
+    background-color: var(--ink-black, #0d0c0a);
+    color: var(--paper-white, #f5eedc);
+  }
+
+  .doodle-btn.secondary {
+    background-color: var(--paper-white, #f5eedc);
+    color: var(--ink-black, #0d0c0a);
+  }
+
+  .doodle-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px var(--border-bold, #0d0c0a);
+  }
+
+  .cta-box {
+    background: var(--bg-paper, #e8dcbf);
+    border: 3px solid var(--border-bold, #0d0c0a);
+    box-shadow: 5px 5px 0px var(--border-bold, #0d0c0a);
+    padding: 1.8rem;
+    text-align: center;
+  }
+
+  .cta-content h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    color: var(--ink-black, #0d0c0a);
+  }
+
+  .cta-content p {
+    font-size: 0.9rem;
+    color: var(--ink-muted, #3a362d);
+    max-width: 480px;
+    margin: 0 auto 1.2rem auto;
+    line-height: 1.5;
+  }
+
+  .cta-btn {
+    background: var(--ink-black, #0d0c0a) !important;
+    color: var(--paper-white, #f5eedc) !important;
+    font-size: 0.88rem !important;
+    padding: 0.55rem 1.2rem !important;
+  }

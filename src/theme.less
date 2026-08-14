@@ -1,0 +1,135 @@
+// ==========================================
+// VINTAGE AGED NEWSPRINT PALETTE (AMBER & PRESS INK)
+// ==========================================
+:root {
+  --bg-paper: #e8dcbf;           /* Oxidized Aged Newsprint (Yellow/Amber) */
+  --ink-black: #0d0c0a;          /* Deep Press Ink Black */
+  --ink-muted: #3a362d;          /* Faded Typewriter Ribbon Charcoal */
+  --paper-white: #f5eedc;        /* Aged Parchment Accent */
+  --border-bold: #0d0c0a;        /* Heavy Pressline Outline */
+  --shadow-hard: 5px 5px 0px #0d0c0a;
+}
+
+// ==========================================
+// GLOBAL RESETS & CANVAS
+// ==========================================
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: var(--bg-paper) !important;
+  background-image:
+    linear-gradient(rgba(13, 12, 10, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 12, 10, 0.08) 1px, transparent 1px) !important;
+  background-size: 20px 20px !important;
+  background-attachment: fixed !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: transparent !important; /* Reveals html newsprint canvas */
+  color: var(--ink-black);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+// ==========================================
+// FRAMEWORK & COMPONENT RESETS (NG-ZORRO / ANGULAR)
+// ==========================================
+app-root,
+router-outlet,
+nz-layout,
+.ant-layout,
+.ant-layout-header,
+.ant-layout-content,
+.ant-layout-footer,
+.ant-layout-sider,
+.ant-tabs,
+.ant-tabs-content,
+.ant-tabs-content-holder,
+.ant-tabs-tabpane,
+.ant-tabs-nav,
+.ant-tabs-nav-wrap,
+.ant-tabs-nav-list {
+  background: transparent !important;
+}
+
+// ==========================================
+// CUSTOM INK SCROLLBAR
+// ==========================================
+::-webkit-scrollbar {
+  width: 10px;
+
+  &-track {
+    background: var(--bg-paper);
+  }
+
+  &-thumb {
+    background: var(--ink-black);
+    border: 2px solid var(--bg-paper);
+
+    &:hover {
+      background: var(--ink-muted);
+    }
+  }
+}
+
+// ==========================================
+// REUSABLE MONOCHROME & ZINE UTILITIES
+// ==========================================
+
+/* Monochrome Masking Tape */
+.tape-sticker {
+  position: absolute;
+  height: 24px;
+  width: 100px;
+  background: rgba(215, 202, 172, 0.85); /* Toned to aged paper */
+  border-left: 1px dashed rgba(13, 12, 10, 0.4);
+  border-right: 1px dashed rgba(13, 12, 10, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  clip-path: polygon(
+    0% 0%, 5% 15%, 1% 35%, 5% 55%, 0% 75%, 4% 100%,
+    100% 100%, 95% 80%, 99% 60%, 95% 40%, 98% 20%, 96% 0%
+  );
+  z-index: 5;
+
+  &.tape-dark {
+    background: var(--ink-black);
+    border-left-color: rgba(245, 238, 220, 0.4);
+    border-right-color: rgba(245, 238, 220, 0.4);
+  }
+
+  &.tape-top-left {
+    top: -12px;
+    left: 30px;
+    transform: rotate(-3deg);
+  }
+
+  &.tape-top-right {
+    top: -10px;
+    right: 40px;
+    transform: rotate(2deg);
+  }
+}
+
+/* Press Ink Stamp Badge (Dojang Style) */
+.korean-dojang-stamp {
+  font-family: 'Cinzel', 'Noto Serif KR', serif;
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: var(--ink-black);
+  border: 2px solid var(--border-bold);
+  padding: 0.2rem 0.6rem;
+  display: inline-block;
+  transform: rotate(-3deg);
+  box-shadow: 2px 2px 0px var(--border-bold);
+  letter-spacing: 0.05em;
+  background-color: var(--paper-white);
+}

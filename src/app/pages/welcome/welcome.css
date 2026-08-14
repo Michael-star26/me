@@ -1,0 +1,301 @@
+/* ==========================================
+   WELCOME COMPONENT - VINTAGE NEWSPRINT & DOODLE ZINE
+   ========================================== */
+
+   :host {
+    display: block;
+    background: transparent !important;
+  }
+
+  /* Strict Global SVG Constraint */
+   /* Strict Global SVG Constraint */
+  svg.doodle-svg {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    display: inline-block;
+    vertical-align: middle;
+    stroke: currentColor;
+    flex-shrink: 0;
+  }
+
+  /* Base Portfolio Layout Wrapper */
+  .doodle-portfolio-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background: transparent !important;
+  }
+
+
+  /* ------------------------------------------
+     1. INTRO HEADER SECTION
+     ------------------------------------------ */
+  .doodle-intro {
+    position: relative;
+    background: var(--paper-white, #f5eedc);
+    border: 3px solid var(--border-bold, #0d0c0a);
+    box-shadow: 6px 6px 0px var(--border-bold, #0d0c0a);
+    padding: 2.2rem 2rem 2rem 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Tape Accent on Header Top */
+  .tape-sticker {
+    position: absolute;
+    top: -12px;
+    left: 30px;
+    width: 110px;
+    height: 24px;
+    background: rgba(215, 202, 172, 0.85);
+    border: 1px dashed rgba(13, 12, 10, 0.4);
+    transform: rotate(-2.5deg);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .intro-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Korean Light Typewriter Badge */
+  .doodle-badge {
+    font-family: 'Courier Prime', 'Nanum Gothic Coding', 'Gowun Batang', monospace;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--ink-black, #0d0c0a);
+    background: var(--bg-paper, #e8dcbf);
+    padding: 0.25rem 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1.5px solid var(--border-bold, #0d0c0a);
+    box-shadow: 2px 2px 0px var(--border-bold, #0d0c0a);
+    margin-bottom: 0.8rem;
+  }
+
+  /* Ultra-Clean Modern Title */
+  .intro-title {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--ink-black, #0d0c0a);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+
+  .intro-tagline {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--ink-muted, #3a362d);
+    max-width: 780px;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+  }
+
+  /* Scrapbook Note Box */
+  .doodle-note-box {
+    background-color: var(--bg-paper, #e8dcbf);
+    border: 2px dashed var(--border-bold, #0d0c0a);
+    padding: 1rem 1.25rem;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+  }
+
+  .doodle-note-box p {
+    margin: 0;
+    color: var(--ink-black, #0d0c0a);
+  }
+
+  .doodle-note-box strong {
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* ------------------------------------------
+     2. MAIN CONTENT SECTION & HEADINGS
+     ------------------------------------------ */
+  .main-content-section {
+    position: relative;
+  }
+
+  .section-heading h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--ink-black, #0d0c0a);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .welcome-container {
+    background: var(--paper-white, #f5eedc);
+    border: 3px solid var(--border-bold, #0d0c0a);
+    box-shadow: 6px 6px 0px var(--border-bold, #0d0c0a);
+    padding: 1.5rem;
+    min-height: 580px;
+  }
+
+  /* Tab Content Inner Host Wrapper */
+  .tab-content-wrapper {
+    padding: 0.5rem 0 0.5rem 1rem;
+  }
+
+  /* ------------------------------------------
+     3. NG-ZORRO STICKY TABSET OVERRIDES (.doodle-tabs)
+     ------------------------------------------ */
+  :host ::ng-deep .doodle-tabs.sticky-tabset.ant-tabs-left > .ant-tabs-nav {
+    position: sticky;
+    top: 2rem;
+    align-self: flex-start;
+    z-index: 10;
+  }
+
+  :host ::ng-deep .doodle-tabs .ant-tabs-content-holder {
+    min-width: 0;
+    padding-left: 1.5rem;
+  }
+
+  /* Aged Paper / Typewriter Aesthetic for Tabs */
+  :host ::ng-deep .doodle-tabs .ant-tabs-nav .ant-tabs-tab {
+    background: var(--bg-paper, #e8dcbf);
+    border: 2px solid var(--border-bold, #0d0c0a) !important;
+    border-radius: 0px !important;
+    margin-bottom: 0.6rem !important;
+    padding: 0.6rem 1rem !important;
+    font-family: 'Courier Prime', 'Nanum Gothic Coding', monospace;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--ink-black, #0d0c0a);
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .tab-title-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  /* Tab Hover State */
+  :host ::ng-deep .doodle-tabs .ant-tabs-nav .ant-tabs-tab:hover {
+    background-color: var(--ink-black, #0d0c0a) !important;
+    transform: translateX(4px);
+    box-shadow: 3px 3px 0px var(--ink-muted, #3a362d);
+  }
+
+  :host ::ng-deep .doodle-tabs .ant-tabs-nav .ant-tabs-tab:hover .ant-tabs-tab-btn {
+    color: var(--paper-white, #f5eedc) !important;
+  }
+
+  /* Active Selected Tab State */
+  :host ::ng-deep .doodle-tabs .ant-tabs-nav .ant-tabs-tab.ant-tabs-tab-active {
+    background-color: var(--ink-black, #0d0c0a) !important;
+    box-shadow: 4px 4px 0px var(--border-bold, #0d0c0a);
+    transform: translateX(5px);
+  }
+
+  :host ::ng-deep .doodle-tabs .ant-tabs-nav .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: var(--paper-white, #f5eedc) !important;
+    font-weight: 700;
+  }
+
+  /* Strip Ant Design Blue Lines & Highlights */
+  :host ::ng-deep .doodle-tabs .ant-tabs-ink-bar,
+  :host ::ng-deep .doodle-tabs .ant-tabs-nav-wrap::after,
+  :host ::ng-deep .doodle-tabs .ant-tabs-border-line {
+    display: none !important;
+  }
+
+  /* ------------------------------------------
+     4. RESPONSIVE BREAKPOINTS
+     ------------------------------------------ */
+  @media (max-width: 768px) {
+    .intro-title {
+      font-size: 2.1rem;
+    }
+
+    .welcome-container {
+      padding: 1rem;
+    }
+
+    .tab-content-wrapper {
+      padding-left: 0;
+      padding-top: 1rem;
+    }
+
+    :host ::ng-deep .sticky-tabset .ant-tabs-content-holder {
+      padding-left: 0;
+    }
+  }
+
+  /* ==========================================
+   AUTO-TRANSLATE TOGGLE - DOODLE STYLE
+   ========================================== */
+
+/* 1. Hide Google Translate native UI clutter */
+.goog-te-banner-frame,
+.skiptranslate,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+/* Hidden mount point required for Google script */
+#google_translate_element {
+  display: none;
+}
+
+/* 2. Custom Pure CSS Neo-Brutalist Toggle Group */
+.auto-lang-group {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-paper, #e8dcbf);
+  border: 2px solid var(--border-bold, #0d0c0a);
+  box-shadow: 2.5px 2.5px 0px var(--border-bold, #0d0c0a);
+  padding: 0.2rem;
+  gap: 0.25rem;
+  font-family: 'Courier Prime', 'Nanum Gothic Coding', monospace;
+}
+
+.auto-lang-btn {
+  background: transparent;
+  border: 1.5px solid transparent;
+  color: var(--ink-muted, #3a362d);
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  line-height: 1;
+}
+
+.auto-lang-btn:hover {
+  color: var(--ink-black, #0d0c0a);
+}
+
+.auto-lang-btn.active {
+  background: var(--paper-white, #f5eedc);
+  color: var(--ink-black, #0d0c0a);
+  border-color: var(--border-bold, #0d0c0a);
+  box-shadow: 1.5px 1.5px 0px var(--border-bold, #0d0c0a);
+}

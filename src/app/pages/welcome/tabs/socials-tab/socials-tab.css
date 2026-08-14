@@ -1,0 +1,58 @@
+/* Strict Global SVG Constraint */
+svg.doodle-svg {
+  width: 14px !important;
+  height: 14px !important;
+  min-width: 14px !important;
+  min-height: 14px !important;
+  max-width: 14px !important;
+  max-height: 14px !important;
+  display: inline-block;
+  vertical-align: middle;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+.typewriter-tag {
+  font-family: 'Courier Prime', 'Nanum Gothic Coding', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--ink-black, #0d0c0a);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.6rem;
+}
+
+.social-section {
+  border-top: 2px dashed var(--border-bold, #0d0c0a);
+  padding-top: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.social-btns {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.social-btns .doodle-btn {
+  font-size: 0.78rem;
+  padding: 0.35rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid var(--border-bold, #0d0c0a);
+  box-shadow: 2px 2px 0px var(--border-bold, #0d0c0a);
+  transition: all 0.15s ease;
+  cursor: pointer;
+  background-color: var(--paper-white, #f5eedc);
+  color: var(--ink-black, #0d0c0a);
+}
+
+.social-btns .doodle-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--border-bold, #0d0c0a);
+}

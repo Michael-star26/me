@@ -1,0 +1,341 @@
+/* ==========================================
+   CV & TIMELINE TAB - NEO-BRUTALIST DOODLE
+   ========================================== */
+
+   .doodle-container {
+    padding: 1rem 0.5rem;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: var(--ink-black, #0d0c0a);
+    background: transparent !important;
+  }
+
+  /* Strict Global SVG Constraint */
+  svg.doodle-svg {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    display: inline-block;
+    vertical-align: middle;
+    stroke: currentColor;
+    flex-shrink: 0;
+  }
+
+  /* Header & Quick Links */
+  .doodle-header {
+    margin-bottom: 2rem;
+  }
+
+  .doodle-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: var(--bg-paper, #e8dcbf);
+    border: 2px solid var(--border-bold, #0d0c0a);
+    box-shadow: 2px 2px 0px var(--border-bold, #0d0c0a);
+    padding: 0.25rem 0.8rem;
+    font-family: 'Courier Prime', 'Nanum Gothic Coding', monospace;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--ink-black, #0d0c0a);
+    margin-bottom: 0.8rem;
+  }
+
+  .doodle-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0.2rem 0;
+    color: var(--ink-black, #0d0c0a);
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    color: var(--ink-muted, #3a362d);
+    font-size: 1rem;
+    margin: 0 0 1.2rem 0;
+    line-height: 1.5;
+  }
+
+  .cv-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  /* Professional Summary Box */
+  .summary-box {
+    position: relative;
+    background: var(--paper-white, #f5eedc);
+    border: 3px solid var(--border-bold, #0d0c0a);
+    box-shadow: 5px 5px 0px var(--border-bold, #0d0c0a);
+    padding: 1.8rem 1.6rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .tape-sticker {
+    position: absolute;
+    top: -10px;
+    right: 25px;
+    width: 90px;
+    height: 20px;
+    background: rgba(215, 202, 172, 0.85);
+    border: 1px dashed rgba(13, 12, 10, 0.4);
+    transform: rotate(2deg);
+    pointer-events: none;
+  }
+
+  .typewriter-tag {
+    font-family: 'Courier Prime', 'Nanum Gothic Coding', monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--ink-black, #0d0c0a);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .summary-text {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--ink-black, #0d0c0a);
+    margin: 0;
+  }
+
+  /* ------------------------------------------
+     CUSTOM DOODLE TIMELINE
+     ------------------------------------------ */
+  .timeline-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--ink-black, #0d0c0a);
+  }
+
+  .doodle-timeline {
+    position: relative;
+    padding-left: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Vertical dashed line connecting markers */
+  .doodle-timeline::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 17px;
+    width: 3px;
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--border-bold, #0d0c0a),
+      var(--border-bold, #0d0c0a) 6px,
+      transparent 6px,
+      transparent 12px
+    );
+  }
+
+  .timeline-item {
+    position: relative;
+  }
+
+  /* Square marker pin */
+  .timeline-marker {
+    position: absolute;
+    left: -2.2rem;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    background: var(--bg-paper, #e8dcbf);
+    border: 2px solid var(--border-bold, #0d0c0a);
+    box-shadow: 2px 2px 0px var(--border-bold, #0d0c0a);
+    color: var(--ink-black, #0d0c0a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  /* Card Content Box */
+  .timeline-content {
+    background: var(--paper-white, #f5eedc);
+    border: 2.5px solid var(--border-bold, #0d0c0a);
+    box-shadow: 4px 4px 0px var(--border-bold, #0d0c0a);
+    padding: 1.3rem;
+    transition: transform 0.15s ease;
+  }
+
+  .timeline-content:hover {
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 0px var(--border-bold, #0d0c0a);
+  }
+
+  .timeline-content.highlight-card {
+    background: var(--bg-paper, #e8dcbf);
+  }
+
+  .content-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .time-badge {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--ink-black, #0d0c0a);
+    background: var(--bg-paper, #e8dcbf);
+    border: 1px solid var(--border-bold, #0d0c0a);
+    padding: 0.1rem 0.4rem;
+    align-self: flex-start;
+  }
+
+  .highlight-card .time-badge {
+    background: var(--paper-white, #f5eedc);
+  }
+
+  .role-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin: 0.2rem 0 0 0;
+    color: var(--ink-black, #0d0c0a);
+  }
+
+  .org-sub {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--ink-muted, #3a362d);
+  }
+
+  .cv-bullets {
+    margin: 0 0 1rem 1.2rem;
+    padding: 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--ink-black, #0d0c0a);
+  }
+
+  .cv-bullets li {
+    margin-bottom: 0.3rem;
+  }
+
+  .skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .s-tag {
+    background: var(--paper-white, #f5eedc);
+    border: 1.5px solid var(--border-bold, #0d0c0a);
+    padding: 0.15rem 0.5rem;
+    font-size: 0.75rem;
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    color: var(--ink-black, #0d0c0a);
+  }
+
+  .exam-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--ink-muted, #3a362d);
+    margin: 0;
+  }
+
+  .coursework-title {
+    font-size: 0.85rem;
+    margin: 0.6rem 0 0.2rem 0;
+    color: var(--ink-black, #0d0c0a);
+  }
+
+  .coursework-list {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--ink-muted, #3a362d);
+    margin: 0;
+  }
+
+  /* ------------------------------------------
+     BUTTONS & CTA
+     ------------------------------------------ */
+  .doodle-btn {
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 0.4rem 0.8rem;
+    border: 2px solid var(--border-bold, #0d0c0a);
+    box-shadow: 2px 2px 0px var(--border-bold, #0d0c0a);
+    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    color: var(--ink-black, #0d0c0a);
+    background: var(--paper-white, #f5eedc);
+  }
+
+  .doodle-btn.primary {
+    background-color: var(--ink-black, #0d0c0a);
+    color: var(--paper-white, #f5eedc);
+  }
+
+  .doodle-btn.secondary {
+    background-color: var(--paper-white, #f5eedc);
+    color: var(--ink-black, #0d0c0a);
+  }
+
+  .doodle-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px var(--border-bold, #0d0c0a);
+  }
+
+  .cta-box {
+    background: var(--bg-paper, #e8dcbf);
+    border: 3px solid var(--border-bold, #0d0c0a);
+    box-shadow: 5px 5px 0px var(--border-bold, #0d0c0a);
+    padding: 1.8rem;
+    text-align: center;
+  }
+
+  .cta-content h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    color: var(--ink-black, #0d0c0a);
+  }
+
+  .cta-content p {
+    font-size: 0.9rem;
+    color: var(--ink-muted, #3a362d);
+    max-width: 480px;
+    margin: 0 auto 1.2rem auto;
+    line-height: 1.5;
+  }
+
+  .cta-btn {
+    background: var(--ink-black, #0d0c0a) !important;
+    color: var(--paper-white, #f5eedc) !important;
+    font-size: 0.88rem !important;
+    padding: 0.55rem 1.2rem !important;
+  }
