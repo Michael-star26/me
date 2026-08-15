@@ -1,6 +1,3 @@
-<!-- Hidden container Google uses to mount its engine -->
-
-
 <!-- Pure HTML/CSS Neo-Brutalist Language Switcher -->
 <div class="auto-lang-group" role="radiogroup" aria-label="Language Switcher">
   <button
@@ -30,7 +27,6 @@
 
   <!-- Top Intro Header -->
   <header class="doodle-intro">
-    <!-- Washi / Masking Tape Aesthetic Decorator -->
     <div class="tape-sticker"></div>
 
     <div class="intro-content">
@@ -63,6 +59,8 @@
     <div class="welcome-container">
       <nz-tabs
         [nzTabPosition]="tabPosition()"
+        [nzSelectedIndex]="selectedTabIndex()"
+        (nzSelectedIndexChange)="onTabChange($event)"
         class="sticky-tabset doodle-tabs">
 
         <!-- Tab 01: Software Dev -->
@@ -104,12 +102,12 @@
           </div>
         </nz-tab>
 
-        <!-- Tab 04: Blog -->
+        <!-- Tab 04: Yellow Pages (Updated Title) -->
         <nz-tab [nzTitle]="titleBlog">
           <ng-template #titleBlog>
             <span class="tab-title-inner">
               <svg class="doodle-svg tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-              Blog & Notes
+              Yellow Pages
             </span>
           </ng-template>
           <div class="tab-content-wrapper">
@@ -162,4 +160,3 @@
 
 </div>
 <div id="google_translate_element"></div>
-

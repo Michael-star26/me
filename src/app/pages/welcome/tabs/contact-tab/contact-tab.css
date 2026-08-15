@@ -450,3 +450,7 @@
     transform: translateY(0);
   }
 }
+button:disabled{
+  background-color: grey;
+
+}
