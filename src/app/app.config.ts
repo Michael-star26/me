@@ -20,5 +20,7 @@ export const appConfig: ApplicationConfig = {
     provideNzIcons(icons),
     provideNzI18n(en_US),
     provideNzDateFnsAdapter(),
+    provideNzI18n(en_US),
+    provideNzDateFnsAdapter(),
   ],
 };

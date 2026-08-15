@@ -1,19 +1,29 @@
+// Custom Theming for NG-ZORRO
+// For more information: https://ng.ant.design/docs/customize-theme/en
+@import '../node_modules/ng-zorro-antd/ng-zorro-antd.less';
+
+// Override less variables to here
+// View all variables: https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/components/style/themes/default.less
+
+// @primary-color: #1890ff;
 // ==========================================
 // VINTAGE AGED NEWSPRINT PALETTE (AMBER & PRESS INK)
 // ==========================================
 :root {
-  --bg-paper: #e8dcbf;           /* Oxidized Aged Newsprint (Yellow/Amber) */
-  --ink-black: #0d0c0a;          /* Deep Press Ink Black */
-  --ink-muted: #3a362d;          /* Faded Typewriter Ribbon Charcoal */
-  --paper-white: #f5eedc;        /* Aged Parchment Accent */
-  --border-bold: #0d0c0a;        /* Heavy Pressline Outline */
+  --bg-paper: #e8dcbf; /* Oxidized Aged Newsprint (Yellow/Amber) */
+  --ink-black: #0d0c0a; /* Deep Press Ink Black */
+  --ink-muted: #3a362d; /* Faded Typewriter Ribbon Charcoal */
+  --paper-white: #f5eedc; /* Aged Parchment Accent */
+  --border-bold: #0d0c0a; /* Heavy Pressline Outline */
   --shadow-hard: 5px 5px 0px #0d0c0a;
 }
 
 // ==========================================
 // GLOBAL RESETS & CANVAS
 // ==========================================
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -35,7 +45,11 @@ body {
   min-height: 100vh;
   background: transparent !important; /* Reveals html newsprint canvas */
   color: var(--ink-black);
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    'Plus Jakarta Sans',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -95,8 +109,18 @@ nz-layout,
   border-right: 1px dashed rgba(13, 12, 10, 0.4);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   clip-path: polygon(
-    0% 0%, 5% 15%, 1% 35%, 5% 55%, 0% 75%, 4% 100%,
-    100% 100%, 95% 80%, 99% 60%, 95% 40%, 98% 20%, 96% 0%
+    0% 0%,
+    5% 15%,
+    1% 35%,
+    5% 55%,
+    0% 75%,
+    4% 100%,
+    100% 100%,
+    95% 80%,
+    99% 60%,
+    95% 40%,
+    98% 20%,
+    96% 0%
   );
   z-index: 5;
 
