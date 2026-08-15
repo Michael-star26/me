@@ -2,24 +2,20 @@
 // For more information: https://ng.ant.design/docs/customize-theme/en
 @import '../node_modules/ng-zorro-antd/ng-zorro-antd.less';
 
-// Override less variables to here
-// View all variables: https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/components/style/themes/default.less
-
-// @primary-color: #1890ff;
 // ==========================================
-// VINTAGE AGED NEWSPRINT PALETTE (AMBER & PRESS INK)
+// HARDWARE NIGHT-LIGHT MATCHING PALETTE
 // ==========================================
 :root {
-  --bg-paper: #e8dcbf; /* Oxidized Aged Newsprint (Yellow/Amber) */
-  --ink-black: #0d0c0a; /* Deep Press Ink Black */
-  --ink-muted: #3a362d; /* Faded Typewriter Ribbon Charcoal */
-  --paper-white: #f5eedc; /* Aged Parchment Accent */
-  --border-bold: #0d0c0a; /* Heavy Pressline Outline */
-  --shadow-hard: 5px 5px 0px #0d0c0a;
+  --bg-paper: #cfb88b;    /* Warm Amber Grid Canvas */
+  --ink-black: #1a160d;   /* Deep Warm Press Ink */
+  --ink-muted: #483f2e;   /* Soft Charcoal Text */
+  --paper-white: #dfcc9f; /* Lighter inner paper card tone */
+  --border-bold: #1a160d; /* High-contrast press outline */
+  --shadow-hard: 6px 6px 0px #1a160d;
 }
 
 // ==========================================
-// GLOBAL RESETS & CANVAS
+// GLOBAL RESETS & FIXED CANVAS
 // ==========================================
 *,
 *::before,
@@ -27,23 +23,26 @@
   box-sizing: border-box;
 }
 
-html {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  background-color: var(--bg-paper) !important;
-  background-image:
-    linear-gradient(rgba(13, 12, 10, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(13, 12, 10, 0.08) 1px, transparent 1px) !important;
-  background-size: 20px 20px !important;
-  background-attachment: fixed !important;
-}
-
-body {
+html, body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background: transparent !important; /* Reveals html newsprint canvas */
+  width: 100%;
+}
+
+/* Attach the grid pattern fixed to the viewport window */
+html {
+  background-color: var(--bg-paper) !important;
+  background-image:
+    linear-gradient(rgba(26, 22, 13, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 22, 13, 0.12) 1px, transparent 1px) !important;
+  background-size: 20px 20px !important;
+  background-attachment: fixed !important;
+  background-repeat: repeat !important;
+}
+
+body {
+  background: transparent !important; /* Exposes the HTML grid across full scroll height */
   color: var(--ink-black);
   font-family:
     'Plus Jakarta Sans',
@@ -55,7 +54,23 @@ body {
 }
 
 // ==========================================
-// FRAMEWORK & COMPONENT RESETS (NG-ZORRO / ANGULAR)
+// EMBEDDED NIGHT-SHIFT / BLUE-LIGHT TINT OVERLAY
+// ==========================================
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(220, 150, 30, 0.08);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+// ==========================================
+// FRAMEWORK & COMPONENT RESETS (PREVENTS SCROLL CUTOFF)
 // ==========================================
 app-root,
 router-outlet,
@@ -99,49 +114,107 @@ nz-layout,
 // REUSABLE MONOCHROME & ZINE UTILITIES
 // ==========================================
 
-/* Monochrome Masking Tape */
-.tape-sticker {
-  position: absolute;
-  height: 24px;
-  width: 100px;
-  background: rgba(215, 202, 172, 0.85); /* Toned to aged paper */
-  border-left: 1px dashed rgba(13, 12, 10, 0.4);
-  border-right: 1px dashed rgba(13, 12, 10, 0.4);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  clip-path: polygon(
-    0% 0%,
-    5% 15%,
-    1% 35%,
-    5% 55%,
-    0% 75%,
-    4% 100%,
-    100% 100%,
-    95% 80%,
-    99% 60%,
-    95% 40%,
-    98% 20%,
-    96% 0%
-  );
-  z-index: 5;
+/* ==========================================
+   NAILED SODA BOTTLE CAP WASHER (DIY HARDWARE)
+   ========================================== */
+  /* ==========================================
+   NAILED SODA BOTTLE CAP WASHER (PROMINENT NAIL)
+   ========================================== */
+/* ==========================================
+   NAILED CAP WITH EXPANDED DOWNWARD CRACK NETWORK
+   ========================================== */
+   .nailed-cap {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    z-index: 12;
 
-  &.tape-dark {
-    background: var(--ink-black);
-    border-left-color: rgba(245, 238, 220, 0.4);
-    border-right-color: rgba(245, 238, 220, 0.4);
-  }
+    /* Metallic Cap Body */
+    background:
+      radial-gradient(
+        circle at 35% 35%,
+        rgba(255, 255, 255, 0.7) 0%,
+        transparent 35%
+      ),
+      radial-gradient(
+        circle at 50% 50%,
+        #b3a288 0%,
+        #7a6a53 45%,
+        #3d3427 75%,
+        #1a160d 100%
+      ) !important;
 
-  &.tape-top-left {
-    top: -12px;
-    left: 30px;
-    transform: rotate(-3deg);
-  }
+    /* 21 Fluted Crown Teeth Mask */
+    -webkit-clip-path: url(#bottle-cap-clip);
+    clip-path: url(#bottle-cap-clip);
 
-  &.tape-top-right {
-    top: -10px;
-    right: 40px;
-    transform: rotate(2deg);
+    /* Cap Drop Shadow */
+    filter: drop-shadow(3px 4px 5px rgba(26, 22, 13, 0.65));
+
+    /* ------------------------------------------
+       EXPANDED DOWNWARD CRACK & WIDE VEIN NETWORK
+       ------------------------------------------ */
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      /* Expanded 160px canvas for wider radial reach */
+      width: 160px;
+      height: 160px;
+      pointer-events: none;
+      z-index: -1;
+
+      /* Extra-long main split with a wider, denser lightning web */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3C!-- 1. MAIN HEAVY DOWNWARD SPLIT --%3E%3Cpath d='M80 80 L70 100 L56 118 L42 136 L26 152' stroke='%231a160d' stroke-width='3' stroke-linecap='square' stroke-linejoin='miter' fill='none' /%3E%3C!-- 2. PRIMARY EXPANDED VEIN BRANCHES --%3E%3Cg stroke='%231a160d' stroke-width='1.8' stroke-linecap='square' fill='none'%3E%3Cpath d='M70 100 L86 110 L100 124 L112 138' /%3E%3Cpath d='M56 118 L44 128 L30 140' /%3E%3Cpath d='M42 136 L54 146 L64 156' /%3E%3Cpath d='M70 100 L58 112 L48 126' /%3E%3Cpath d='M86 110 L96 102 L108 94' /%3E%3C/g%3E%3C!-- 3. DENSE SECONDARY & MICRO-VEINS --%3E%3Cg stroke='%231a160d' stroke-width='1' stroke-dasharray='2 1' fill='none'%3E%3Cpath d='M86 110 L94 118 M100 124 L108 130 M112 138 L122 144' /%3E%3Cpath d='M44 128 L36 134 M30 140 L22 146' /%3E%3Cpath d='M54 146 L60 152 M64 156 L72 158' /%3E%3Cpath d='M58 112 L66 120 M48 126 L56 132' /%3E%3Cpath d='M96 102 L102 108 M108 94 L116 98' /%3E%3Cpath d='M26 152 L18 156 M26 152 L30 158' /%3E%3Cpath d='M70 100 L78 92 M56 118 L62 110' /%3E%3C/g%3E%3C!-- 4. WHITE TENSION CREASE HIGHLIGHTS --%3E%3Cpath d='M81 80 L71 100 L57 118 L43 136 L27 152' stroke='%23ffffff' stroke-width='0.8' stroke-opacity='0.7' fill='none' /%3E%3C/svg%3E") !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+    }
+
+    /* ------------------------------------------
+       PROMINENT NAIL HEAD
+       ------------------------------------------ */
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+
+      background: radial-gradient(
+        circle at 30% 30%,
+        #ffffff 0%,
+        #a89c8b 25%,
+        #423a30 65%,
+        #120f09 100%
+      );
+      border: 2px solid #0d0c0a;
+      box-shadow:
+        inset 1.5px 1.5px 2px rgba(255, 255, 255, 0.85),
+        inset -1.5px -1.5px 2px rgba(0, 0, 0, 0.9),
+        2px 3px 5px rgba(10, 8, 5, 0.85);
+      z-index: 2;
+    }
+
+    /* Positioning Adjustments */
+    &.cap-top-left {
+      top: -18px;
+      left: 18px;
+      transform: rotate(-10deg);
+    }
+
+    &.cap-top-right {
+      top: -16px;
+      right: 24px;
+      transform: rotate(14deg);
+    }
   }
-}
 
 /* Press Ink Stamp Badge (Dojang Style) */
 .korean-dojang-stamp {
