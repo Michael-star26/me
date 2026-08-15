@@ -299,3 +299,17 @@ body {
   border-color: var(--border-bold, #0d0c0a);
   box-shadow: 1.5px 1.5px 0px var(--border-bold, #0d0c0a);
 }
+
+/* responsiveness */
+@media (max-width: 768px) {
+  .doodle-tabs.ant-tabs-top > .ant-tabs-nav .ant-tabs-nav-list {
+    display: flex !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .doodle-tabs.ant-tabs-top > .ant-tabs-nav {
+    margin-bottom: 1rem;
+  }
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit, signal, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { NzTabsModule, NzTabPosition } from 'ng-zorro-antd/tabs';
 import { ActuarialTab } from './tabs/actuarial-tab/actuarial-tab';
 import { BlogTab } from './tabs/blog-tab/blog-tab';
@@ -37,12 +38,20 @@ declare global {
 })
 export class Welcome implements OnInit {
   private platformId = inject(PLATFORM_ID);
+  private breakpointObserver = inject(BreakpointObserver);
+
   currentLang = signal<Lang>('en');
+  tabPosition = signal<NzTabPosition>('left');
 
   ngOnInit(): void {
-    // Only execute on client-side rendering
     if (isPlatformBrowser(this.platformId)) {
       this.initGoogleTranslate();
+
+      this.breakpointObserver
+        .observe(['(max-width: 768px)'])
+        .subscribe((result) => {
+          this.tabPosition.set(result.matches ? 'top' : 'left');
+        });
     }
   }
 
@@ -78,5 +87,4 @@ export class Welcome implements OnInit {
       }
     }
   }
-
 }
