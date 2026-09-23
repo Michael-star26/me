@@ -46,7 +46,7 @@ export class Welcome implements OnInit {
   private router = inject(Router);
 
   // Tab path mapping matching the index position of <nz-tab> elements
-  tabPaths: string[] = ['software', 'actuarial', 'research', 'blog', 'cv', 'contact', 'socials'];
+  tabPaths: string[] = ['software','cv', 'contact', 'socials'];
 
   selectedTabIndex = signal<number>(0);
   currentLang = signal<Lang>('en');
